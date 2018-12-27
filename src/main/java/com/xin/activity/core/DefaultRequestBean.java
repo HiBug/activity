@@ -1,6 +1,4 @@
-package com.xin.activity.handler.requestBeans;
-
-import com.xin.activity.core.RequestBean;
+package com.xin.activity.core;
 
 /**
  * @author three
