@@ -1,11 +1,10 @@
 package com.xin.activity.handler.responseBeans;
 
+import com.xin.activity.core.DefaultPageResponse;
 import com.xin.activity.core.ResponseBean;
-import com.xin.activity.model.School;
 import lombok.Builder;
 import lombok.Data;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
 
 /**
  * @author three
@@ -17,10 +16,9 @@ import java.util.List;
 @Data
 @Builder
 public class SchoolListResponseBean implements ResponseBean {
-    private List<SchoolBean> list;
+    private DefaultPageResponse<SchoolBean> list;
 
     @Data
-    @Builder
     public static class SchoolBean {
         private Long   id;
         private String name;

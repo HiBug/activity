@@ -6,13 +6,14 @@ import com.xin.activity.core.BaseResponse;
 import com.xin.activity.core.DefaultPageRequest;
 import com.xin.activity.core.Handler;
 import com.xin.activity.handler.responseBeans.SchoolListResponseBean;
+import com.xin.activity.model.School;
 import com.xin.activity.repository.SchoolRepository;
+import com.xin.activity.util.BeanUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.stream.Collectors;
 
 /**
  * @author three
@@ -30,18 +31,13 @@ public class SchoolListHandler implements Handler<DefaultPageRequest> {
     @Override
     public BaseResponse handle(DefaultPageRequest request, String openId) {
 
+        Page<School> schools = schoolRepository.findAll(
+                PageRequest.of(request.getPage(), request.getSize(),
+                        Sort.by(Sort.Order.desc("updTime"))));
+
         return ErrorCodeEnum.success.buildResponse(
                 SchoolListResponseBean.builder().list(
-                        schoolRepository.findAll(
-                                PageRequest.of(request.getPage(), request.getSize(),
-                                        Sort.by(Sort.Order.desc("updTime"))))
-                                .stream()
-                                .map(school ->
-                                        SchoolListResponseBean.SchoolBean.builder()
-                                                .id(school.getId())
-                                                .name(school.getName())
-                                                .build()
-                                ).collect(Collectors.toList()))
-                        .build());
+                        BeanUtil.buildPage(schools, SchoolListResponseBean.SchoolBean.class)
+                ).build());
     }
 }

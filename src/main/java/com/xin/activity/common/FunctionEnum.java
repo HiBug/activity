@@ -6,6 +6,7 @@ import com.xin.activity.core.DefaultPageRequest;
 import com.xin.activity.core.RequestBean;
 import com.xin.activity.handler.requestBeans.FindMasterRequestBean;
 import com.xin.activity.handler.requestBeans.NotFoundRequestBean;
+import com.xin.activity.handler.requestBeans.StudentListRequestBean;
 import lombok.Getter;
 import org.apache.commons.lang.StringUtils;
 
@@ -22,7 +23,7 @@ import java.util.stream.Stream;
 public enum FunctionEnum {
     schoolList(FunctionCode.schoolList, "学校列表", DefaultPageRequest.class),
     findMaster(FunctionCode.findMaster, "查询教练", FindMasterRequestBean.class),
-    studentList(FunctionCode.studentList, "学员列表", null),
+    studentList(FunctionCode.studentList, "学员列表", StudentListRequestBean.class),
     studentApplyList(FunctionCode.studentApplyList, "学员申请列表", null),
     reviewStudent(FunctionCode.reviewStudent, "学员审核", null),
     register(FunctionCode.register, "注册", null),
