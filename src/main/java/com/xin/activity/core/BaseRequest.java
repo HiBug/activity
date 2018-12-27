@@ -16,7 +16,7 @@ import javax.validation.constraints.NotBlank;
 @Data
 public class BaseRequest {
     private FunctionEnum function;
-    @NotBlank
+    @NotBlank(message = "openId can not be null")
     private String       openId;
     private Object       param;
 }

@@ -19,8 +19,8 @@ import org.springframework.stereotype.Service;
 @Log4j2
 public class NotFoundHandler implements Handler<NotFoundRequestBean> {
     @Override
-    public BaseResponse handle(NotFoundRequestBean request) {
-        log.info("function:{},request:{}", FunctionCode.notFound, JSON.toJSONString(request));
+    public BaseResponse handle(NotFoundRequestBean request, String openId) {
+        log.info("openId:{},function:{},request:{}", openId, FunctionCode.notFound, JSON.toJSONString(request));
         return ErrorCodeEnum.error.buildResponse(NotFoundResponseBean.builder().hello("e").build());
     }
 

@@ -19,6 +19,7 @@ import java.util.Map;
  * </p>
  */
 @RestController
+@SuppressWarnings("unchecked")
 public class Route implements ApplicationContextAware {
 
     private Map<String, Handler> mappedFunction;
@@ -27,9 +28,9 @@ public class Route implements ApplicationContextAware {
     @ResponseBody
     public BaseResponse route(@RequestBody @Validated BaseRequest request) {
         FunctionEnum functionEnum = request.getFunction();
-        Handler     handler      = mappedFunction.get(functionEnum.getCode());
+        Handler      handler      = mappedFunction.get(functionEnum.getCode());
         RequestBean  requestBean  = JSON.parseObject(JSON.toJSONString(request.getParam()), functionEnum.getRequestBeanClass());
-        return handler.handle(requestBean);
+        return handler.handle(requestBean, request.getOpenId());
     }
 
     @Override

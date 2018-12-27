@@ -8,5 +8,5 @@ package com.xin.activity.core;
  * </p>
  */
 public interface Handler<T extends RequestBean> {
-    BaseResponse handle(T request);
+    BaseResponse handle(T request, String openId);
 }
