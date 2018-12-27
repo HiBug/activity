@@ -2,6 +2,7 @@ package com.xin.activity.common;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.xin.activity.core.DefaultPageRequest;
 import com.xin.activity.core.RequestBean;
 import com.xin.activity.handler.requestBeans.NotFoundRequestBean;
 import lombok.Getter;
@@ -18,6 +19,7 @@ import java.util.stream.Stream;
  */
 @Getter
 public enum FunctionEnum {
+    schoolList(FunctionCode.schoolList, "学校列表", DefaultPageRequest.class),
     findMaster(FunctionCode.findMaster, "查询教练", null),
     studentList(FunctionCode.studentList, "学员列表", null),
     studentApplyList(FunctionCode.studentApplyList, "学员申请列表", null),

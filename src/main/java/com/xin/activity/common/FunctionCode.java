@@ -8,6 +8,7 @@ package com.xin.activity.common;
  * </p>
  */
 public interface FunctionCode {
+    String schoolList       = "schoolList";
     String findMaster       = "findMaster";
     String studentList      = "studentList";
     String studentApplyList = "studentApplyList";

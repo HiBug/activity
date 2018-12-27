@@ -21,11 +21,14 @@ import java.util.Date;
 public class School {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String mobile;
+    private Long    id;
+    private String  name;
+    private String  mobile;
+    private Integer teacherCount;
+    private Integer studentCount;
+
     @Column(insertable = false, updatable = false)
-    private Date   crtTime;
+    private Date crtTime;
     @Column(insertable = false, updatable = false)
-    private Date   updTime;
+    private Date updTime;
 }
