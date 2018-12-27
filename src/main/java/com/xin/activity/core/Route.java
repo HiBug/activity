@@ -1,7 +1,6 @@
 package com.xin.activity.core;
 
 import com.alibaba.fastjson.JSON;
-import com.xin.activity.common.FunctionCode;
 import com.xin.activity.common.FunctionEnum;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

@@ -1,4 +1,4 @@
-package com.xin.activity.handler;
+package com.xin.activity.handler.requestBeans;
 
 import com.xin.activity.core.RequestBean;
 import lombok.Data;
@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
  * </p>
  */
 @Data
-@NoArgsConstructor
 public class NotFoundRequestBean implements RequestBean {
     private String code;
 }

@@ -1,4 +1,4 @@
-package com.xin.activity.handler;
+package com.xin.activity.handler.responseBeans;
 
 import com.xin.activity.core.ResponseBean;
 import lombok.Builder;
@@ -14,5 +14,5 @@ import lombok.Data;
 @Builder
 @Data
 public class NotFoundResponseBean implements ResponseBean {
-    private String hello;
+    private String message;
 }

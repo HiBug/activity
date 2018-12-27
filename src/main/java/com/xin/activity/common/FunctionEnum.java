@@ -3,8 +3,7 @@ package com.xin.activity.common;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.xin.activity.core.RequestBean;
-import com.xin.activity.handler.NotFoundRequestBean;
-import com.xin.activity.handler.NotFoundResponseBean;
+import com.xin.activity.handler.requestBeans.NotFoundRequestBean;
 import lombok.Getter;
 import org.apache.commons.lang.StringUtils;
 
