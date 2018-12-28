@@ -25,7 +25,7 @@ public class Route implements ApplicationContextAware {
 
     @RequestMapping(value = "route", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
-    public BaseResponse route(@RequestBody @Validated BaseRequest request) {
+    public BaseResponse route(@RequestBody @Validated BaseRequest request) throws BizException {
         FunctionEnum functionEnum = request.getFunction();
         Handler      handler      = mappedFunction.get(functionEnum.getCode());
         RequestBean  requestBean  = JSON.parseObject(JSON.toJSONString(request.getParam()), functionEnum.getRequestBeanClass());

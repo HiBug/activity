@@ -1,8 +1,7 @@
 package com.xin.activity.common;
 
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.xin.activity.core.BaseResponse;
+import com.xin.activity.core.BizException;
 import com.xin.activity.core.ResponseBean;
 import lombok.Getter;
 
@@ -25,6 +24,20 @@ public enum ErrorCodeEnum {
     ErrorCodeEnum(String code, String msg) {
         this.code = code;
         this.msg = msg;
+    }
+
+    public void throwException() throws BizException {
+        BizException exception = new BizException();
+        exception.setCode(this.getCode());
+        exception.setMsg(this.getMsg());
+        throw exception;
+    }
+
+    public BaseResponse buildResponse() {
+        BaseResponse response = new BaseResponse();
+        response.setMsg(this.getMsg());
+        response.setCode(this.getCode());
+        return response;
     }
 
     public <T extends ResponseBean> BaseResponse<T> buildResponse(T data) {
