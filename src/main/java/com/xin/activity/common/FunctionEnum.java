@@ -1,12 +1,11 @@
 package com.xin.activity.common;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.xin.activity.core.DefaultPageRequest;
+import com.xin.activity.core.DefaultPageRequestBean;
 import com.xin.activity.core.RequestBean;
 import com.xin.activity.handler.requestBeans.FindMasterRequestBean;
 import com.xin.activity.handler.requestBeans.NotFoundRequestBean;
-import com.xin.activity.handler.requestBeans.StudentListRequestBean;
+import com.xin.activity.handler.requestBeans.StudentListRequestBeanBean;
 import lombok.Getter;
 import org.apache.commons.lang.StringUtils;
 
@@ -21,9 +20,9 @@ import java.util.stream.Stream;
  */
 @Getter
 public enum FunctionEnum {
-    schoolList(FunctionCode.schoolList, "学校列表", DefaultPageRequest.class),
+    schoolList(FunctionCode.schoolList, "学校列表", DefaultPageRequestBean.class),
     findMaster(FunctionCode.findMaster, "查询教练", FindMasterRequestBean.class),
-    studentList(FunctionCode.studentList, "学员列表", StudentListRequestBean.class),
+    studentList(FunctionCode.studentList, "学员列表", StudentListRequestBeanBean.class),
     studentApplyList(FunctionCode.studentApplyList, "学员申请列表", null),
     reviewStudent(FunctionCode.reviewStudent, "学员审核", null),
     register(FunctionCode.register, "注册", null),
@@ -43,7 +42,7 @@ public enum FunctionEnum {
     }
 
     @JsonCreator
-    public static FunctionEnum getByCode(@JSONField(name = "code") String code) {
+    public static FunctionEnum getByCode(String code) {
         return Stream.of(FunctionEnum.values())
                 .filter(function -> StringUtils.equals(code, function.getCode()))
                 .findAny()

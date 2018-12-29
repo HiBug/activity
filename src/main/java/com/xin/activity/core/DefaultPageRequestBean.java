@@ -10,7 +10,7 @@ import javax.validation.constraints.Max;
  * </p>
  */
 
-public class DefaultPageRequest implements RequestBean {
+public class DefaultPageRequestBean implements RequestBean {
     private int page = 1;
     @Max(20)
     private int size = 10;

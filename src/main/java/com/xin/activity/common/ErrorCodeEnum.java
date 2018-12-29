@@ -16,6 +16,8 @@ import lombok.Getter;
 public enum ErrorCodeEnum {
     success("0000", "ok"),
 
+    master_null("1001", "这个教练好像不存在"),
+
     error("9999", "error");
 
     private String code;

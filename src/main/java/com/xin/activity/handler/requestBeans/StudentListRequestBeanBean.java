@@ -1,7 +1,7 @@
 package com.xin.activity.handler.requestBeans;
 
 import com.xin.activity.common.StudentStatus;
-import com.xin.activity.core.DefaultPageRequest;
+import com.xin.activity.core.DefaultPageRequestBean;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -14,6 +14,6 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class StudentListRequestBean extends DefaultPageRequest {
-    private StudentStatus type;
+public class StudentListRequestBeanBean extends DefaultPageRequestBean {
+    private StudentStatus status;
 }

@@ -1,6 +1,8 @@
 package com.xin.activity.common;
 
+import com.alibaba.fastjson.annotation.JSONType;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.xin.activity.deserializer.EnumDeserializer;
 import lombok.Getter;
 import org.apache.commons.lang.StringUtils;
 
@@ -14,7 +16,8 @@ import java.util.stream.Stream;
  * </p>
  */
 @Getter
-public enum StudentStatus {
+@JSONType(deserializer = EnumDeserializer.class)
+public enum StudentStatus implements EnumBase {
     doing("0", "学习中"),
     done("1", "已毕业"),
     quit("2", "退学"),

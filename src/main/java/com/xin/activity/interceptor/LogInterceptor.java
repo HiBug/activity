@@ -41,7 +41,8 @@ public class LogInterceptor {
             log.error("error:", t);
             response = ErrorCodeEnum.error.buildResponse();
         }
-        log.info("request:{},response:{}", JSON.toJSONString(request), JSON.toJSONString(response));
+        String methodName = proceedingJoinPoint.getSignature().getName();
+        log.info("methodName:{},request:{},response:{}", methodName, JSON.toJSONString(request), JSON.toJSONString(response));
         return response;
     }
 }

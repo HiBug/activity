@@ -3,7 +3,7 @@ package com.xin.activity.handler;
 import com.xin.activity.common.ErrorCodeEnum;
 import com.xin.activity.common.FunctionCode;
 import com.xin.activity.core.BaseResponse;
-import com.xin.activity.core.DefaultPageRequest;
+import com.xin.activity.core.DefaultPageRequestBean;
 import com.xin.activity.core.Handler;
 import com.xin.activity.handler.responseBeans.SchoolListResponseBean;
 import com.xin.activity.model.School;
@@ -23,13 +23,13 @@ import org.springframework.stereotype.Service;
  * </p>
  */
 @Service(FunctionCode.schoolList)
-public class SchoolListHandler implements Handler<DefaultPageRequest> {
+public class SchoolListHandler implements Handler<DefaultPageRequestBean> {
 
     @Autowired
     private SchoolRepository schoolRepository;
 
     @Override
-    public BaseResponse handle(DefaultPageRequest request, String openId) {
+    public BaseResponse handle(DefaultPageRequestBean request, String openId) {
 
         Page<School> schools = schoolRepository.findAll(
                 PageRequest.of(request.getPage(), request.getSize(),
