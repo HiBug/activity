@@ -2,6 +2,7 @@ package com.xin.activity.common;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.xin.activity.core.DefaultPageRequestBean;
+import com.xin.activity.core.DefaultRequestBean;
 import com.xin.activity.core.RequestBean;
 import com.xin.activity.handler.requestBeans.FindMasterRequestBean;
 import com.xin.activity.handler.requestBeans.NotFoundRequestBean;
@@ -23,7 +24,7 @@ public enum FunctionEnum {
     schoolList(FunctionCode.schoolList, "学校列表", DefaultPageRequestBean.class),
     findMaster(FunctionCode.findMaster, "查询教练", FindMasterRequestBean.class),
     studentList(FunctionCode.studentList, "学员列表", StudentListRequestBeanBean.class),
-    studentApplyList(FunctionCode.studentApplyList, "学员申请列表", null),
+    studentApplyList(FunctionCode.studentApplyList, "学员申请列表", DefaultRequestBean.class),
     reviewStudent(FunctionCode.reviewStudent, "学员审核", null),
     register(FunctionCode.register, "注册", null),
     createCourse(FunctionCode.createCourse, "创建课程", null),

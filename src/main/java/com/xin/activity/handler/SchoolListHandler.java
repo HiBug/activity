@@ -36,7 +36,7 @@ public class SchoolListHandler implements Handler<DefaultPageRequestBean> {
                         Sort.by(Sort.Order.desc("updTime"))));
 
         return ErrorCodeEnum.success.buildResponse(
-                SchoolListResponseBean.builder().list(
+                SchoolListResponseBean.builder().page(
                         BeanUtil.buildPage(schools, SchoolListResponseBean.SchoolBean.class)
                 ).build());
     }

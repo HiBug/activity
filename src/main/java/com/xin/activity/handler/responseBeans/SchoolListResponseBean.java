@@ -16,7 +16,7 @@ import org.springframework.data.domain.Page;
 @Data
 @Builder
 public class SchoolListResponseBean implements ResponseBean {
-    private DefaultPageResponse<SchoolBean> list;
+    private DefaultPageResponse<SchoolBean> page;
 
     @Data
     public static class SchoolBean {

@@ -13,16 +13,8 @@ import lombok.Data;
  * </p>
  */
 @Data
+@Builder
 public class StudentListResponseBean implements ResponseBean {
 
-    private DefaultPageResponse<StudentBean> list;
-
-    @Data
-    @Builder
-    public static class StudentBean {
-        private Long   id;
-        private String iconUrl;
-        private String realName;
-        private String mobile;
-    }
+    private DefaultPageResponse<StudentBean> page;
 }
