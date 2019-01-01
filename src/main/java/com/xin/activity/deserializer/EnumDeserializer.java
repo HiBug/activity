@@ -46,7 +46,7 @@ public class EnumDeserializer implements ObjectDeserializer {
                 return (T) Enum.valueOf(cls, lexer.stringVal());
             }
         }
-        return null;
+        return (T) enumConstants[enumConstants.length - 1];
     }
 
     @Override

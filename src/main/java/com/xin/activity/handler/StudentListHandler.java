@@ -5,7 +5,7 @@ import com.xin.activity.common.FunctionCode;
 import com.xin.activity.core.BaseResponse;
 import com.xin.activity.core.BizException;
 import com.xin.activity.core.Handler;
-import com.xin.activity.handler.requestBeans.StudentListRequestBeanBean;
+import com.xin.activity.handler.requestBeans.StudentListRequestBean;
 import com.xin.activity.handler.responseBeans.StudentBean;
 import com.xin.activity.handler.responseBeans.StudentListResponseBean;
 import com.xin.activity.helper.MasterHelper;
@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
  * </p>
  */
 @Service(FunctionCode.studentList)
-public class StudentListHandler implements Handler<StudentListRequestBeanBean> {
+public class StudentListHandler implements Handler<StudentListRequestBean> {
     @Autowired
     private StudentRepository studentRepository;
 
@@ -35,7 +35,7 @@ public class StudentListHandler implements Handler<StudentListRequestBeanBean> {
     private MasterHelper masterHelper;
 
     @Override
-    public BaseResponse handle(StudentListRequestBeanBean request, String openId) throws BizException {
+    public BaseResponse handle(StudentListRequestBean request, String openId) throws BizException {
 
         //找到教练
         Master master = masterHelper.getMasterByOpenId(openId);

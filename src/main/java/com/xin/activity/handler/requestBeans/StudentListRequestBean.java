@@ -14,6 +14,6 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class StudentListRequestBeanBean extends DefaultPageRequestBean {
+public class StudentListRequestBean extends DefaultPageRequestBean {
     private StudentStatus status;
 }
