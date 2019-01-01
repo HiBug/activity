@@ -16,4 +16,6 @@ public interface MasterRepository extends JpaRepository<Master, Long> {
     Master findByMobile(String mobile);
 
     Master findByOpenId(String openId);
+
+    boolean existsAllByMobile(String mobile);
 }

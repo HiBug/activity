@@ -19,8 +19,13 @@ public enum ErrorCodeEnum {
     master_null("1001", "这个教练好像不存在"),
     master_not_permit("1002", "您没有操作该学员的权限"),
 
+
     student_null("2001", "这个学员不存在"),
 
+    school_null("3001", "该驾校不存在，请重新选择"),
+
+    param_error("9001", "参数校验失败"),
+    mobile_exist("9002", "该手机号已经注册"),
     error("9999", "error");
 
     private String code;

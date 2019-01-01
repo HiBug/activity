@@ -25,9 +25,19 @@ public class StudentHelper {
         return student;
     }
 
-    private void checkStudent(Student student) throws BizException {
-        if (student == null) {
-            ErrorCodeEnum.student_null.throwException();
+    /**
+     * 根据手机号查询是否存在，存在则抛异常
+     *
+     * @param mobile
+     * @throws BizException
+     */
+    public void existsByMobile(String mobile) throws BizException {
+        if (studentRepository.existsAllByMobile(mobile)) {
+            ErrorCodeEnum.mobile_exist.throwException();
         }
+    }
+
+    private void checkStudent(Student student) throws BizException {
+        CheckHelper.checkNull(student, ErrorCodeEnum.student_null);
     }
 }

@@ -32,6 +32,18 @@ public class MasterHelper {
         return master;
     }
 
+    /**
+     * 根据手机号查询是否存在，存在则抛异常
+     *
+     * @param mobile
+     * @throws BizException
+     */
+    public void existsByMobile(String mobile) throws BizException {
+        if (masterRepository.existsAllByMobile(mobile)) {
+            ErrorCodeEnum.mobile_exist.throwException();
+        }
+    }
+
     public Master getMasterById(Long id) throws BizException {
         Master master = masterRepository.getOne(id);
         checkMaster(master);
@@ -45,8 +57,6 @@ public class MasterHelper {
     }
 
     private void checkMaster(Master master) throws BizException {
-        if (master == null) {
-            ErrorCodeEnum.master_null.throwException();
-        }
+        CheckHelper.checkNull(master, ErrorCodeEnum.master_null);
     }
 }

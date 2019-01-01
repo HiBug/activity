@@ -18,4 +18,6 @@ import org.springframework.stereotype.Repository;
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
     Page<Student> queryByStatusAndMasterId(StudentStatus status, Long masterId, Pageable page);
+
+    boolean existsAllByMobile(String mobile);
 }
