@@ -16,9 +16,10 @@ import lombok.Getter;
 @Getter
 @JSONType(deserializer = EnumDeserializer.class)
 public enum StudentStatus implements EnumBase {
-    doing("0", "学习中"),
-    done("1", "已毕业"),
-    quit("2", "退学"),
+    todo("0", "申请中"),
+    doing("1", "学习中"),
+    done("2", "已毕业"),
+    quit("3", "退学"),
     defaultType("", "");
 
     private String value;
