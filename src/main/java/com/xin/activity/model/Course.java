@@ -22,12 +22,11 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long    id;
-    private String  schoolId;
-    private String  masterId;
-    private Date    startDate;
-    private Date    endDate;
+    private Long  schoolId;
+    private Long    masterId;
+    private Date    startDate;//包含这天
+    private Date    endDate;//包含这天
     private Integer courseRank;
-    private String  weather;
     private String  memo;
     @Column(insertable = false, updatable = false)
     private Date    crtTime;

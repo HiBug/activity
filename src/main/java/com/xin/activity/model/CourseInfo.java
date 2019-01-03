@@ -1,5 +1,6 @@
 package com.xin.activity.model;
 
+import com.xin.activity.common.CourseInfoStatus;
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -22,15 +23,15 @@ import java.util.Date;
 public class CourseInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private Long courseId;
-    private Long studentId;
-    private Integer rank;
-    private Date date;
-    private String week;
-    private Integer status;
+    private Long             id;
+    private Long             courseId;
+    private Long             studentId;
+    private Integer          rank;
+    private Date             date;
+    private String           week;
+    private CourseInfoStatus status;
     @Column(insertable = false, updatable = false)
-    private Date   crtTime;
+    private Date             crtTime;
     @Column(insertable = false, updatable = false)
-    private Date   updTime;
+    private Date             updTime;
 }

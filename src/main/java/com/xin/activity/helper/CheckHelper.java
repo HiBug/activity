@@ -10,8 +10,8 @@ import com.xin.activity.core.BizException;
  *
  * </p>
  */
-public class CheckHelper {
-    public static <T> void checkNull(T value, ErrorCodeEnum errorCode) throws BizException {
+class CheckHelper {
+    static <T> void checkNull(T value, ErrorCodeEnum errorCode) throws BizException {
         if (value == null) {
             errorCode.throwException();
         }

@@ -5,7 +5,7 @@ import com.xin.activity.core.DefaultPageRequestBean;
 import com.xin.activity.core.RequestBean;
 import com.xin.activity.handler.requestBeans.*;
 import lombok.Getter;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.stream.Stream;
 
@@ -23,8 +23,8 @@ public enum FunctionEnum {
     studentList(FunctionCode.studentList, "学员列表", StudentListRequestBean.class),
     reviewStudent(FunctionCode.reviewStudent, "学员审核", StudentReviewRequestBean.class),
     register(FunctionCode.register, "注册", RegisterRequestBean.class),
-    createCourse(FunctionCode.createCourse, "创建课程", null),
-    editCourse(FunctionCode.editCourse, "编辑课程", null),
+    createCourse(FunctionCode.createCourse, "创建课程", CreateCourseRequestBean.class),
+    editCourse(FunctionCode.editCourse, "编辑课程", EditCourseRequestBean.class),
     deleteCourse(FunctionCode.deleteCourse, "删除课程", null),
     appointment(FunctionCode.appointment, "学员预约", null),
     notFound(FunctionCode.notFound, "doNothing", NotFoundRequestBean.class);

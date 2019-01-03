@@ -24,6 +24,9 @@ public enum ErrorCodeEnum {
 
     school_null("3001", "该驾校不存在，请重新选择"),
 
+    course_null("4001", "课程不存在或已删除，请重新选择"),
+    course_exist("4002", "该时间段课程已经存在，请查看课程列表"),
+
     param_error("9001", "参数校验失败"),
     mobile_exist("9002", "该手机号已经注册"),
     error("9999", "error");
