@@ -26,7 +26,7 @@ public enum FunctionEnum {
     createCourse(FunctionCode.createCourse, "创建课程", CreateCourseRequestBean.class),
     editCourse(FunctionCode.editCourse, "编辑课程", EditCourseRequestBean.class),
     deleteCourse(FunctionCode.deleteCourse, "删除课程", null),
-    appointment(FunctionCode.appointment, "学员预约", null),
+    appointment(FunctionCode.appointment, "学员预约", AppointmentRequestBean.class),
     notFound(FunctionCode.notFound, "doNothing", NotFoundRequestBean.class);
     private String                       code;
     private String                       desc;

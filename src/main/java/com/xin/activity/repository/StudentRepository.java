@@ -19,5 +19,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     Page<Student> queryByStatusAndMasterId(StudentStatus status, Long masterId, Pageable page);
 
+    Student getByOpenId(String openId);
+
     boolean existsAllByMobile(String mobile);
 }

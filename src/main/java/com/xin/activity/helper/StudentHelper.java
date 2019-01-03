@@ -25,6 +25,12 @@ public class StudentHelper {
         return student;
     }
 
+    public Student getByOpenId(String openId) throws BizException {
+        Student student = studentRepository.getByOpenId(openId);
+        checkStudent(student);
+        return student;
+    }
+
     /**
      * 根据手机号查询是否存在，存在则抛异常
      *

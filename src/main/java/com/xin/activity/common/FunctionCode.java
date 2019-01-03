@@ -8,15 +8,14 @@ package com.xin.activity.common;
  * </p>
  */
 public interface FunctionCode {
-    String schoolList       = "schoolList";
-    String findMaster       = "findMaster";
-    String studentList      = "studentList";
-    String studentApplyList = "studentApplyList";
-    String reviewStudent    = "reviewStudent";
-    String register         = "register";
-    String createCourse     = "createCourse";
-    String editCourse       = "editCourse";
-    String deleteCourse     = "deleteCourse";
-    String appointment      = "appointment";
-    String notFound         = "notFound";
+    String schoolList    = "schoolList";
+    String findMaster    = "findMaster";
+    String studentList   = "studentList";
+    String reviewStudent = "reviewStudent";
+    String register      = "register";
+    String createCourse  = "createCourse";
+    String editCourse    = "editCourse";
+    String deleteCourse  = "deleteCourse";
+    String appointment   = "appointment";
+    String notFound      = "notFound";
 }

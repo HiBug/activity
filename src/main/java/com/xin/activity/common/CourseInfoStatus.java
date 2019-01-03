@@ -18,6 +18,7 @@ import lombok.Getter;
 public enum CourseInfoStatus implements EnumBase {
     rest("0", "休息"),
     pre("1", "预设学员"),
+    appointment("2", "学员预约"),
     defaultType("", "");
 
     private String value;
