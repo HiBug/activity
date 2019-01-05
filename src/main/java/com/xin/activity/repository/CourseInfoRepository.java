@@ -17,4 +17,6 @@ public interface CourseInfoRepository extends JpaRepository<CourseInfo, Long> {
 
     @Modifying
     void deleteAllByCourseId(Long id);
+
+
 }

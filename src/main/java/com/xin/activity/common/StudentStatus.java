@@ -19,7 +19,8 @@ public enum StudentStatus implements EnumBase {
     todo("0", "申请中"),
     doing("1", "学习中"),
     done("2", "已毕业"),
-    deleted("3","删除"),
+    deleted("3", "删除"),
+    limit("4", "限制选课"),
     defaultType("", "");
 
     private String value;

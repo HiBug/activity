@@ -17,3 +17,4 @@ public class StudentReviewRequestBean implements RequestBean {
 
     private StudentStatus status;
 }
+

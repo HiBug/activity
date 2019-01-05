@@ -2,6 +2,7 @@ package com.xin.activity.repository;
 
 import com.xin.activity.model.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -23,4 +24,7 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
             " and course.startDate <= :date" +
             " and course.endDate >= :date")
     List<Course> queryByMasterIdAndDate(@Param("masterId") Long masterId, @Param("date") Date date);
+
+    @Modifying
+    void deleteById(Long id);
 }

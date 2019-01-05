@@ -1,6 +1,7 @@
 package com.xin.activity.helper;
 
 import com.xin.activity.common.ErrorCodeEnum;
+import com.xin.activity.common.StudentStatus;
 import com.xin.activity.core.BizException;
 import com.xin.activity.model.Student;
 import com.xin.activity.repository.StudentRepository;
@@ -29,6 +30,17 @@ public class StudentHelper {
         Student student = studentRepository.getByOpenId(openId);
         checkStudent(student);
         return student;
+    }
+
+    public void checkForAppointment(Student student) throws BizException {
+        StudentStatus studentStatus = student.getStatus();
+        if (StudentStatus.todo.equals(studentStatus)) {
+            //申请中
+            ErrorCodeEnum.student_status_todo.throwException();
+        } else if (StudentStatus.limit.equals(studentStatus)) {
+            //限制选课
+            ErrorCodeEnum.student_status_limit.throwException();
+        }
     }
 
     /**

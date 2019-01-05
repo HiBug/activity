@@ -47,6 +47,10 @@ public class AppointmentHandler implements Handler<AppointmentRequestBean> {
             Student          student = studentHelper.getByOpenId(openId);
             Master           master  = masterHelper.getMasterById(student.getMasterId());
             CourseEntityBean bean    = BeanUtil.buildBean(request, CourseEntityBean.class);
+
+            //学员检测
+            studentHelper.checkForAppointment(student);
+
             bean.setStudentId(student.getId());
             bean.setStatus(CourseInfoStatus.appointment);
             courseHelper.editCourseSingle(bean, course, master.getStudentCountOneDay());

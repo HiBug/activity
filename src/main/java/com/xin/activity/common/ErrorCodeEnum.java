@@ -22,6 +22,8 @@ public enum ErrorCodeEnum {
 
     student_null("2001", "这个学员不存在"),
     student_appointment_date_illegal("2002", "约车时间不在教练规定范围内"),
+    student_status_todo("2003", "教练审批过后才可以选课"),
+    student_status_limit("2004", "你被教练限制选课，请与教练联系"),
 
 
     school_null("3001", "该驾校不存在，请重新选择"),
@@ -29,6 +31,7 @@ public enum ErrorCodeEnum {
     course_null("4001", "课程不存在或已删除，请重新选择"),
     course_exist("4002", "该时间段课程已经存在，请查看课程列表"),
     course_occupied("4003", "该位置已被其他学员抢先了"),
+    course_delete_illegal("4004", "课程已经开始不可删除"),
 
 
     param_error("9001", "参数校验失败"),
